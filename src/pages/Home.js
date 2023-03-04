@@ -15,6 +15,8 @@ function Home() {
         <div className='p-2 box-border px-10 pb-16'>
           <Routes>
               <Route path="/" element={<Welcome />} />
+              {/* {backup route for github glitch} */}
+              <Route path="ecommerce-react-task/" element={<Welcome />} />
               <Route path='products' element={<ProductList />} />
               <Route path="products/:id" element={<ProductDetails />} />
               <Route path="cart" element={<Cart />} />
