@@ -57,7 +57,7 @@ function ProductList() {
         )}
       </div>
 
-      <div className="flex gap-1 flex-col sm:grid sm:grid-cols-3">
+      <div className="flex gap-2 flex-col sm:grid sm:grid-cols-3">
         <CartIcon />
         {filteredProducts.map(product => (
           <ProductCard key={product.id} product={product} />

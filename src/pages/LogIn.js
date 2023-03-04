@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Context } from '../Context';
 
 const Login = () => {
@@ -11,15 +12,22 @@ const {email, setEmail, password, setPassword} = React.useContext(Context)
     e.preventDefault();
 
     // if we have a back-end server ready we wold use something like:
-    // try {
-    //   const response = await axios.post('/api/login', {
-    //     email,
-    //     password,
-    //   });
-    //   console.log(response.data);
-    // } catch (error) {
-    //   console.error(error);
-    // }
+    // fetch('/api/login', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify({ email, password })
+    // })
+    //   .then(response => {
+    //     if (response.ok) {
+    //       return response.json();
+    //     }
+    //     throw new Error('Network response was not ok.');
+    //   })
+    //   .then(data => console.log(data))
+    //   .catch(error => console.error(error));
+    
     // Navigate to home page on successful login
     navigate('/');
   };
@@ -75,13 +83,15 @@ const {email, setEmail, password, setPassword} = React.useContext(Context)
             </a>
           </div>
           <div className="text-center mt-6">
-            <span className="text-gray-700">New user?</span>{' '}
-            <a
-              href="#"
-              className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
-            >
-              Sign up
-            </a>
+            <span className="text-gray-700">New user?</span>
+            <Link to={`/signup`}>
+              <div
+                className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
+              >
+                Sign up
+              </div>
+            </Link>
+            
           </div>
         </form>
       </motion.div>

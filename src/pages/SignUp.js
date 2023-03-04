@@ -34,22 +34,29 @@ function SignUp() {
   
 // if we have a server ready we wold make something like this
 
-//     if (Object.keys(errors).length === 0) {
-//       try {
-//         // Send request to server to create new user
-//         const response = await axios.post('/api/users', formData);
-//         console.log(response.data); // or do something else with the response
-  
-//         // Navigate to home page
-//         history.push('/');
-//       } catch (error) {
-//         console.error(error);
-//         // TODO: Handle error
-//       }
-//     }
-  };
-  
+// if (Object.keys(errors).length === 0) {
+//   try {
+//     // Send request to server to create new user
+//     const response = await fetch('/api/users', {
+//       method: 'POST',
+//       body: formData,
+//     });
 
+//     if (response.ok) {
+//       const data = await response.json();
+//       console.log(data); // or do something else with the response
+//       // Navigate to home page
+//       navigate('/');
+//     } else {
+//       throw new Error('Network response was not ok.');
+//     }
+//   } catch (error) {
+//     console.error(error);
+//     // TODO: Handle error
+//   }
+// }
+
+  }
   return (
   <div className="flex flex-col justify-center items-center min-h-screen bg-gradient-to-br from-pink-500 to-purple-500">
     <motion.div

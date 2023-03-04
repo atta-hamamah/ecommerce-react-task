@@ -10,9 +10,9 @@ import Cart from './Cart';
 
 function Home() {
   return (
-    <div className='w-full bg-gray-100'>
+    <div className='w-full min-h-full bg-gray-100'>
         <Navbar/>
-        <div className='p-2 box-border px-10 pb-16'>
+        <div className='p-2 min-h-screen box-border px-4 sm:px-10 pb-16'>
           <Routes>
               <Route path="/" element={<Welcome />} />
               {/* {backup route for github glitch} */}

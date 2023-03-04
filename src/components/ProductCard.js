@@ -12,8 +12,8 @@ function ProductCard({ product }) {
 
   return (
     <div
-      className=" transition-all duration-500 rounded-lg hover:bg-green-200 bg-purple-300
-        flex flex-wrap justify-center items-end text-center pt-2 overflow-hidden shadow-lg"
+      className=" transition-all duration-500 rounded-lg hover:bg-green-200 bg-pink-200
+        flex flex-wrap justify-center items-end text-center overflow-hidden shadow-lg"
     >
         <div className="pb-2/3 w-full rounded-md">
           <img
