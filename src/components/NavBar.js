@@ -7,10 +7,14 @@ import { Context } from '../Context';
 
 function Navbar() {
   const [showUser , setShowUser] = React.useState(false)
-  const {email , } = React.useContext(Context)
+  const {email , setEmail } = React.useContext(Context)
   function userShowing(){
     setShowUser(prev => !prev)
   }
+  function userToggle(){
+
+  }
+
   return (
     <nav className="bg-gradient-to-br from-pink-500 to-purple-500 shadow-lg sticky top-0  rounded-full">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -51,10 +55,10 @@ function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4 }}
           >
-            <BiUserCircle onClick={userShowing} className=' cursor-pointer text-3xl right-1 absolute text-white'/>
+            <BiUserCircle onClick={userShowing} className=' transition-all duration-200 cursor-pointer text-3xl right-1 absolute hover:text-cyan-500 text-white'/>
             {showUser &&
               <Link to={`login`}>
-                <div className=' font-bold first-letter: text-white flex justify-center items-center text-center border-2 border-blue-500 border-solid bg-purple-400 p-1 rounded-full absolute right-8'>
+                <div onClick={()=> setEmail('')} className='transition-all duration-300 -mt-4 font-bold first-letter: text-white flex justify-center items-center text-center border-2 hover:text-cyan-500 hover:border-white border-cyan-500 border-solid bg-purple-400 p-1 rounded-full absolute right-8'>
                   {email ?'Log out':'Log in'}
                 </div>
               </Link>

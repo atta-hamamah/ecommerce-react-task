@@ -1,20 +1,25 @@
-import React, {useEffect} from 'react';
-import { useParams } from 'react-router-dom';
-import { Context } from '../Context';
-
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { Context } from "../Context";
+import {ThreeDots} from "react-loader-spinner";
 
 function ProductDetails() {
   const { id } = useParams();
-  const {product, setProduct} = React.useContext(Context)
-  
+  const { product, setProduct } = React.useContext(Context);
+
   useEffect(() => {
-    fetch(`https://dummyjson.com/products/${id}`) 
-    .then(res => res.json())
-    .then(res =>setProduct(res))
-    .catch(error => console.error(error));
+    fetch(`https://dummyjson.com/products/${id}`)
+      .then((res) => res.json())
+      .then((res) => setProduct(res))
+      .catch((error) => console.error(error));
   }, [id]);
+
   if (!product) {
-    return <div className=' text-red-500 text-center mt-11'>Loading...</div>;
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <ThreeDots type="Puff" color="#c050d5" height={100} width={100} />
+      </div>
+    );
   }
 
   return (
