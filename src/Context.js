@@ -1,12 +1,10 @@
-import React , {useState , createContext} from "react"
+import React, { useState, createContext } from "react"
 
 const Context = createContext()
 
-function ContextProvider({children}) {
-    // login
+function ContextProvider({ children }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    // SignUp
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -25,7 +23,7 @@ function ContextProvider({children}) {
     const [product, setProduct] = useState(null);
     //cart items
     const [cartItems, setCartItems] = useState([]);
-    
+
 
     return (
         <Context.Provider value={{
@@ -36,11 +34,11 @@ function ContextProvider({children}) {
             products, setProducts,
             product, setProduct,
             cartItems, setCartItems,
-            }}
+        }}
         >
             {children}
         </Context.Provider>
     )
 }
 
-export {ContextProvider, Context}
+export { ContextProvider, Context }

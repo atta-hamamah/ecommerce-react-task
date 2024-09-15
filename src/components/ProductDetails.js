@@ -1,7 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "../Context";
-import {ThreeDots} from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner";
 
 function ProductDetails() {
   const { id } = useParams();

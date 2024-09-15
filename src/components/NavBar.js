@@ -6,13 +6,10 @@ import { Link } from 'react-router-dom';
 import { Context } from '../Context';
 
 function Navbar() {
-  const [showUser , setShowUser] = React.useState(false)
-  const {email , setEmail } = React.useContext(Context)
-  function userShowing(){
+  const [showUser, setShowUser] = React.useState(false)
+  const { email, setEmail } = React.useContext(Context)
+  function userShowing() {
     setShowUser(prev => !prev)
-  }
-  function userToggle(){
-
   }
 
   return (
@@ -21,23 +18,23 @@ function Navbar() {
         <div className="relative flex items-center justify-between h-12">
           {/* Logo */}
           <Link className=' absolute z-10 ' to={`/`}>
-          <motion.div
-            className="flex-shrink-0 flex items-center"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4 }}
-          >
-            
+            <motion.div
+              className="flex-shrink-0 flex items-center"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4 }}
+            >
+
               <img
                 className="h-8 mt-0 w-auto rounded-md"
                 src={logo}
                 alt="Logo"
               />
-            
-            <span className=" hidden sm:block font-bold text-xl ml-2 text-white">
-              T-M
-            </span>
-          </motion.div>
+
+              <span className=" hidden sm:block font-bold text-xl ml-2 text-white">
+                T-M
+              </span>
+            </motion.div>
           </Link>
           {/* Title */}
           <motion.div
@@ -55,11 +52,11 @@ function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4 }}
           >
-            <BiUserCircle onClick={userShowing} className=' transition-all duration-200 cursor-pointer text-3xl right-1 absolute hover:text-cyan-500 text-white'/>
+            <BiUserCircle onClick={userShowing} className=' transition-all duration-200 cursor-pointer text-3xl right-1 absolute hover:text-cyan-500 text-white' />
             {showUser &&
               <Link to={`login`}>
-                <div onClick={()=> setEmail('')} className='transition-all duration-300 -mt-4 font-bold first-letter: text-white flex justify-center items-center text-center border-2 hover:text-cyan-500 hover:border-white border-cyan-500 border-solid bg-purple-400 p-1 rounded-full absolute right-8'>
-                  {email ?'Log out':'Log in'}
+                <div onClick={() => setEmail('')} className='transition-all duration-300 -mt-4 font-bold first-letter: text-white flex justify-center items-center text-center border-2 hover:text-cyan-500 hover:border-white border-cyan-500 border-solid bg-purple-400 p-1 rounded-full absolute right-8'>
+                  {email ? 'Log out' : 'Log in'}
                 </div>
               </Link>
             }
