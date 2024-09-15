@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
@@ -5,30 +6,11 @@ import { Link } from 'react-router-dom';
 import { Context } from '../Context';
 
 const Login = () => {
-const {email, setEmail, password, setPassword} = React.useContext(Context)
+  const { email, setEmail, password, setPassword } = React.useContext(Context)
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // if we have a back-end server ready we wold use something like:
-    // fetch('/api/login', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify({ email, password })
-    // })
-    //   .then(response => {
-    //     if (response.ok) {
-    //       return response.json();
-    //     }
-    //     throw new Error('Network response was not ok.');
-    //   })
-    //   .then(data => console.log(data))
-    //   .catch(error => console.error(error));
-    
-    // Navigate to home page on successful login
     navigate('/');
   };
 
@@ -91,7 +73,7 @@ const {email, setEmail, password, setPassword} = React.useContext(Context)
                 Sign up
               </div>
             </Link>
-            
+
           </div>
         </form>
       </motion.div>
